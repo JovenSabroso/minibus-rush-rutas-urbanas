@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { internalStreetLines } from '../world/streetGrid.js';
+import { internalStreetLines } from './streetGrid.js';
 
 const GREEN_TIME = 5.0;
 const YELLOW_TIME = 1.3;

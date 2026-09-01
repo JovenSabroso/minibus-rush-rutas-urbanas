@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { GasStation, Garage } from '../world/ServiceStations.js';
+import { GasStation, Garage } from './ServiceStations.js';
 
 const INTERACT_RADIUS = 7.5;
 const MAX_INTERACT_SPEED = 1.5; // m/s, hay que estar casi detenido para interactuar

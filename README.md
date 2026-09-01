@@ -44,16 +44,20 @@ npm run preview
 /minibus-rush
   /public/assets/{models,textures,sounds}   # preparado para recursos futuros
   /src
-    /components   # UI (HUD.js) — se amplía en próximas fases
-    /systems      # input, cámara, colisiones, economía, ruta, rng
-    /world        # ciudad procedural (calles, edificios, montañas, teleférico) y paradas
-    /vehicles     # minibús del jugador y NPCs
-    game.js       # orquestador principal (escena, luces, loop)
+    /game         # toda la logica del juego (ciudad, minibus, trafico, ruta,
+                   # combustible, policia, eventos...), un archivo por sistema
+      index.js     # orquestador principal (escena, luces, loop)
+    /ui           # interfaz (HUD.js)
     main.js       # punto de entrada
     style.css     # estilos globales del HUD
+  /sitio-web      # pagina web de presentacion del proyecto (aparte del juego)
   index.html
   package.json
 ```
+
+Cada archivo dentro de `/src/game` es una sola responsabilidad (un sistema o
+una pieza del mundo/vehículo), pero todos viven en la misma carpeta para no
+tener que navegar varios niveles de subcarpetas.
 
 ## Características implementadas
 

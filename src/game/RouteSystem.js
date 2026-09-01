@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { BusStop } from '../world/BusStop.js';
+import { BusStop } from './BusStop.js';
 
 // Ruta fija de la fase 2: Terminal -> Mercado -> Centro -> Zona Sur.
 // Cada parada se ubica sobre la acera de una manzana (2.5m adentro de su

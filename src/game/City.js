@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { mulberry32 } from '../systems/rng.js';
+import { mulberry32 } from './rng.js';
 
 const BUILDING_COLORS = [0xe8452c, 0x2b6fb3, 0x3ea66b, 0xf5b400, 0x8e44ad, 0xd35400, 0x16a085, 0xc0392b, 0xe67e22];
 

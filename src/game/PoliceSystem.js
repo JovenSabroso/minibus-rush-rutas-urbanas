@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { internalStreetLines } from '../world/streetGrid.js';
+import { internalStreetLines } from './streetGrid.js';
 
 const CHECKPOINT_RADIUS = 20; // metros: dentro de este radio un policia "puede" verte infringir
 const FINE_BASE = 15; // Bs

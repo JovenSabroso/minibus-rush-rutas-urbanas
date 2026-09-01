@@ -1,18 +1,18 @@
 import * as THREE from 'three';
-import { InputSystem } from './systems/InputSystem.js';
-import { CameraSystem } from './systems/CameraSystem.js';
-import { CollisionSystem } from './systems/CollisionSystem.js';
-import { GameState } from './systems/GameState.js';
-import { RouteSystem } from './systems/RouteSystem.js';
-import { ServiceSystem } from './systems/ServiceSystem.js';
-import { TrafficSystem } from './systems/TrafficSystem.js';
-import { TrafficLightSystem } from './systems/TrafficLightSystem.js';
-import { PoliceSystem } from './systems/PoliceSystem.js';
-import { EventSystem } from './systems/EventSystem.js';
-import { mulberry32 } from './systems/rng.js';
-import { City } from './world/City.js';
-import { Minibus } from './vehicles/Minibus.js';
-import { HUD } from './components/HUD.js';
+import { InputSystem } from './InputSystem.js';
+import { CameraSystem } from './CameraSystem.js';
+import { CollisionSystem } from './CollisionSystem.js';
+import { GameState } from './GameState.js';
+import { RouteSystem } from './RouteSystem.js';
+import { ServiceSystem } from './ServiceSystem.js';
+import { TrafficSystem } from './TrafficSystem.js';
+import { TrafficLightSystem } from './TrafficLightSystem.js';
+import { PoliceSystem } from './PoliceSystem.js';
+import { EventSystem } from './EventSystem.js';
+import { mulberry32 } from './rng.js';
+import { City } from './City.js';
+import { Minibus } from './Minibus.js';
+import { HUD } from '../ui/HUD.js';
 
 /**
  * Game

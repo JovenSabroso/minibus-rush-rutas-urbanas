@@ -1,6 +1,6 @@
 import * as THREE from 'three';
-import { buildTrafficVehicle } from '../vehicles/TrafficVehicles.js';
-import { internalStreetLines } from '../world/streetGrid.js';
+import { buildTrafficVehicle } from './TrafficVehicles.js';
+import { internalStreetLines } from './streetGrid.js';
 
 const LANE_OFFSET = 2.25; // separacion del centro de calle para cada sentido (streetWidth=9 -> 2 carriles)
 const COLLISION_RADIUS = 2.5; // metros, distancia para considerar choque leve con el jugador

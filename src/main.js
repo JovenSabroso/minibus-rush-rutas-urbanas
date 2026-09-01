@@ -1,5 +1,5 @@
 import './style.css';
-import { Game } from './game.js';
+import { Game } from './game/index.js';
 
 /**
  * Punto de entrada del prototipo.
