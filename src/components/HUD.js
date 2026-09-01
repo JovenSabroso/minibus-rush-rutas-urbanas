@@ -32,6 +32,13 @@ export class HUD {
 
     this.minimapCanvas = document.getElementById('minimap-canvas');
     this.minimapCtx = this.minimapCanvas.getContext('2d');
+
+    this.rainOverlayEl = document.getElementById('rain-overlay');
+  }
+
+  /** Muestra u oculta la superposicion de lluvia (evento aleatorio, fase 4). */
+  setRain(active) {
+    this.rainOverlayEl.classList.toggle('hidden', !active);
   }
 
   /** Llamado una vez por frame desde el loop principal. */

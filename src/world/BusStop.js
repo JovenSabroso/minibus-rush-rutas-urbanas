@@ -108,6 +108,23 @@ export class BusStop {
     }
   }
 
+  /**
+   * Agrega pasajeros extra a la fila de espera actual, sin tocar a los que
+   * ya estaban. Usado por el evento aleatorio "mucha demanda de pasajeros"
+   * (fase 4): esa parada en particular se llena mas de lo normal.
+   */
+  addExtraWaiting(count) {
+    const startIndex = this.waiting.length;
+    for (let i = 0; i < count; i++) {
+      const fareType = pickFareType(this.rng);
+      const mesh = this._buildPassengerMesh(fareType.color);
+      const angle = ((startIndex + i) / (startIndex + count)) * Math.PI * 2;
+      mesh.position.set(Math.cos(angle) * 1.5, 0, Math.sin(angle) * 1.5 - 1.8);
+      this.group.add(mesh);
+      this.waiting.push({ mesh, fareType });
+    }
+  }
+
   /** Hace subir a un pasajero al minibus (quita su mesh de la escena). Devuelve la tarifa. */
   boardNextPassenger() {
     const passenger = this.waiting.shift();

@@ -2,7 +2,7 @@
 
 Prototipo universitario de simulación y conducción 3D para navegador, inspirado en el transporte urbano de La Paz y El Alto (Bolivia). Construido con Three.js sobre Vite, sin modelos 3D externos: toda la geometría (ciudad y vehículo) es procedural.
 
-> ⚠️ Estado actual: **Fase 3 completada** — ciudad, minibús, cámara, movimiento, paradas, pasajeros, dinero, ruta con GPS, combustible, desgaste del vehículo, reputación, gasolinera y taller mecánico. El resto de las fases (tráfico, semáforos, policía, menús) se irán agregando de forma incremental.
+> ⚠️ Estado actual: **Fase 4 completada** — ciudad, minibús, cámara, movimiento, paradas, pasajeros, dinero, ruta con GPS, combustible, desgaste del vehículo, reputación, gasolinera, taller mecánico, tráfico NPC, semáforos, policía/multas y eventos aleatorios. Queda la Fase 5 (menús, mejoras, día/noche y pulido visual).
 
 ## Tecnologías
 
@@ -92,9 +92,14 @@ npm run preview
 - Arcos/salpicaderas oscuros sobre cada rueda, para que no queden "pegadas" a un costado liso.
 - Estas proporciones se ajustaron mirando referencias reales de minibuses tipo van (solo como inspiración visual, sin copiar ninguna imagen ni diseño de marca).
 
+**Fase 4 — Tráfico, semáforos, policía y eventos aleatorios**
+- Tráfico NPC (autos, taxis, otros minibuses y camiones) circulando en dos carriles por cada calle interna de la ciudad, con geometría y materiales compartidos entre instancias. Chocar contra uno produce daño leve al minibús (sin detener al NPC, que no tiene IA de reacción).
+- 16 semáforos funcionales (verde/amarillo/rojo) en los cruces internos, cada uno con su propio ciclo. Cruzar uno en rojo genera una infracción de tránsito.
+- Policía: 2 puntos de control fijos con un agente procedural. Las infracciones (semáforo en rojo) restan reputación siempre, y pueden derivar en una multa en dinero si ocurren cerca de un control o si el jugador acumula demasiadas infracciones seguidas. Sin opción de soborno: si no tienes plata para pagar, solo queda la advertencia.
+- 7 eventos aleatorios que aparecen cada cierto tiempo: tráfico pesado, lluvia (con superposición visual y menos tracción al girar/frenar), bloqueo de calle (velocidad máxima reducida un rato), accidente (detiene a un vehículo NPC), control de tránsito reforzado, desperfecto mecánico (daña una estadística al azar) y mucha demanda de pasajeros (llegan más personas a la parada actual).
+
 ## Próximas fases
 
-- **Fase 4:** tráfico NPC, semáforos, policía y eventos aleatorios.
-- **Fase 5:** menú principal, mejoras, ciclo día/noche y pulido visual.
+- **Fase 5:** menú principal, pausa, mejoras del vehículo, ciclo día/noche y pulido visual.
 
 Este proyecto es un **prototipo universitario** desarrollado para la asignatura de Programación Gráfica y Multimedia I. No representa marcas comerciales reales ni pretende ser una reproducción exacta de la ciudad de La Paz/El Alto.

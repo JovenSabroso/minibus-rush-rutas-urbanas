@@ -5,6 +5,10 @@ import { CollisionSystem } from './systems/CollisionSystem.js';
 import { GameState } from './systems/GameState.js';
 import { RouteSystem } from './systems/RouteSystem.js';
 import { ServiceSystem } from './systems/ServiceSystem.js';
+import { TrafficSystem } from './systems/TrafficSystem.js';
+import { TrafficLightSystem } from './systems/TrafficLightSystem.js';
+import { PoliceSystem } from './systems/PoliceSystem.js';
+import { EventSystem } from './systems/EventSystem.js';
 import { mulberry32 } from './systems/rng.js';
 import { City } from './world/City.js';
 import { Minibus } from './vehicles/Minibus.js';
@@ -50,9 +54,29 @@ export class Game {
 
     this.routeSystem.onPassengerBoarded = (fareType) => this.hud.spawnMoneyPopup(fareType.fare);
 
+    // --- Fase 4: trafico NPC, semaforos, policia y eventos aleatorios ---
+    this.trafficSystem = new TrafficSystem(this.scene, this.city, mulberry32(555));
+    this.trafficLightSystem = new TrafficLightSystem(this.scene, this.city, mulberry32(777));
+    this.policeSystem = new PoliceSystem(this.scene, this.city, mulberry32(888));
+    this.policeSystem.onFine = (text) => this.hud.showToast(text);
+    // Pasar un semaforo en rojo es una infraccion de transito (la registra la policia).
+    this.trafficLightSystem.onRedLightInfraction = (pos) => this.policeSystem.registerInfraction(this.gameState, pos);
+
+    this.eventSystem = new EventSystem({
+      minibus: this.minibus,
+      trafficSystem: this.trafficSystem,
+      policeSystem: this.policeSystem,
+      routeSystem: this.routeSystem,
+      rng: mulberry32(999),
+      onToast: (text) => this.hud.showToast(text),
+      onRainChange: (active) => this.hud.setRain(active),
+    });
+
     // Cooldown para que un choque prolongado (bus empujado contra una pared)
     // no destruya la reputacion/carroceria cuadro a cuadro.
     this._collisionPenaltyCooldown = 0;
+    // Mismo concepto pero para choques leves contra trafico NPC.
+    this._trafficCollisionCooldown = 0;
 
     this.input.onKeyPressed('KeyC', () => this.cameraSystem.cycleMode());
 
@@ -130,8 +154,23 @@ export class Game {
       this.gameState.addReputation(0.02 * delta);
     }
 
+    // Choque leve contra trafico NPC: dano menor al de un edificio, sin
+    // detener el vehiculo NPC (no tiene IA de reaccion, sigue su carril).
+    const trafficCollided = this.trafficSystem.checkPlayerCollision(this.minibus);
+    this._trafficCollisionCooldown = Math.max(0, this._trafficCollisionCooldown - delta);
+    if (trafficCollided && this._trafficCollisionCooldown <= 0) {
+      this.minibus.wear.carroceria = Math.max(0, this.minibus.wear.carroceria - 2);
+      this.minibus.wear.suspension = Math.max(0, this.minibus.wear.suspension - 1);
+      this.gameState.addReputation(-2);
+      this._trafficCollisionCooldown = 1.2;
+    }
+
     this.routeSystem.update(delta, this.minibus);
     this.serviceSystem.update(delta, this.minibus, this.gameState);
+    this.trafficSystem.update(delta);
+    this.trafficLightSystem.update(delta, this.minibus);
+    this.policeSystem.update(delta);
+    this.eventSystem.update(delta);
     this.cameraSystem.update(delta);
     this.city.animate(delta);
 

@@ -45,6 +45,39 @@ body {
   outline: none;
 }
 
+/* ---------- Lluvia (evento aleatorio, fase 4) ---------- */
+
+#rain-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  background-image: repeating-linear-gradient(
+    115deg,
+    rgba(200, 220, 245, 0.16) 0px,
+    rgba(200, 220, 245, 0.16) 1px,
+    transparent 1px,
+    transparent 9px
+  );
+  background-size: 140% 140%;
+  animation: rain-fall 0.35s linear infinite;
+}
+
+#rain-overlay:not(.hidden) {
+  opacity: 1;
+}
+
+@keyframes rain-fall {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -40px 90px;
+  }
+}
+
 /* ---------- HUD ---------- */
 
 #hud {

@@ -25,6 +25,10 @@ export class Minibus {
 
     this._steerVisualAngle = 0; // para animar giro visual de ruedas delanteras
 
+    // Traccion efectiva (1 = normal). El evento aleatorio "lluvia" la baja
+    // un rato: menos agarre al girar y al frenar. Fase 4.
+    this.tractionMultiplier = 1;
+
     // Mitad del tamano de la caja de colision (x=ancho, y=alto, z=largo)
     this.collisionHalfExtents = new THREE.Vector3(1.15, 1.05, 2.75);
 
@@ -266,8 +270,8 @@ export class Minibus {
 
     const effAcceleration = this.acceleration * motorFactor;
     const effMaxSpeed = this.maxSpeed * motorFactor;
-    const effBrakeDeceleration = this.brakeDeceleration * brakeFactor;
-    const effTurnRate = this.turnRate * tireFactor;
+    const effBrakeDeceleration = this.brakeDeceleration * brakeFactor * this.tractionMultiplier;
+    const effTurnRate = this.turnRate * tireFactor * this.tractionMultiplier;
 
     const engineOn = this.fuel > 0;
     let accel = 0;
