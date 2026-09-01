@@ -1,0 +1,17 @@
+{
+  "name": "minibus-rush-rutas-urbanas",
+  "version": "0.1.0",
+  "description": "Prototipo 3D de simulacion y conduccion de transporte urbano, inspirado en La Paz y El Alto, Bolivia.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "three": "^0.169.0"
+  },
+  "devDependencies": {
+    "vite": "^5.4.10"
+  }
+}

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-label="Ilustración de la ciudad y el minibús de Minibús Rush">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c2431"/>
+      <stop offset="100%" stop-color="#0c0f14"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="420" fill="url(#sky)"/>
+
+  <!-- montañas de fondo -->
+  <polygon points="0,260 120,150 220,240 340,120 460,250 600,160 720,240 800,190 800,420 0,420" fill="#232b3a"/>
+  <polygon points="0,300 150,220 300,290 470,200 650,280 800,240 800,420 0,420" fill="#1a2029"/>
+
+  <!-- cable del teleférico -->
+  <line x1="60" y1="150" x2="740" y2="120" stroke="#4a5468" stroke-width="2"/>
+  <rect x="230" y="150" width="18" height="24" rx="3" fill="#e8452c"/>
+  <rect x="520" y="132" width="18" height="24" rx="3" fill="#f5b400"/>
+
+  <!-- skyline de edificios "a medio construir" -->
+  <g>
+    <rect x="20" y="240" width="46" height="150" fill="#3a3f47"/>
+    <rect x="20" y="240" width="46" height="46" fill="#e8452c"/>
+    <rect x="76" y="200" width="40" height="190" fill="#2c313a"/>
+    <rect x="76" y="200" width="40" height="70" fill="#2b6fb3"/>
+    <rect x="126" y="260" width="52" height="130" fill="#3a3f47"/>
+    <rect x="126" y="260" width="52" height="40" fill="#3ea66b"/>
+    <rect x="190" y="215" width="38" height="175" fill="#2c313a"/>
+    <rect x="190" y="215" width="38" height="55" fill="#f5b400"/>
+    <rect x="600" y="230" width="44" height="160" fill="#3a3f47"/>
+    <rect x="600" y="230" width="44" height="46" fill="#2b6fb3"/>
+    <rect x="652" y="190" width="40" height="200" fill="#2c313a"/>
+    <rect x="652" y="190" width="40" height="70" fill="#e8452c"/>
+    <rect x="700" y="255" width="50" height="135" fill="#3a3f47"/>
+    <rect x="700" y="255" width="50" height="42" fill="#f5b400"/>
+    <rect x="758" y="270" width="34" height="120" fill="#2c313a"/>
+    <!-- varillas de fierro asomando -->
+    <line x1="30" y1="240" x2="30" y2="222" stroke="#8a8f96" stroke-width="2"/>
+    <line x1="38" y1="240" x2="38" y2="226" stroke="#8a8f96" stroke-width="2"/>
+    <line x1="610" y1="230" x2="610" y2="214" stroke="#8a8f96" stroke-width="2"/>
+    <line x1="618" y1="230" x2="618" y2="218" stroke="#8a8f96" stroke-width="2"/>
+  </g>
+
+  <!-- calle -->
+  <rect x="0" y="390" width="800" height="30" fill="#20242c"/>
+  <g stroke="#f5b400" stroke-width="4" stroke-dasharray="26 18">
+    <line x1="0" y1="405" x2="800" y2="405"/>
+  </g>
+
+  <!-- minibús en primer plano -->
+  <g transform="translate(280,300)">
+    <rect x="0" y="30" width="240" height="70" rx="14" fill="#f5b400"/>
+    <rect x="0" y="30" width="240" height="20" rx="8" fill="#e8452c"/>
+    <rect x="14" y="56" width="46" height="30" rx="4" fill="#6cc4f5"/>
+    <rect x="70" y="56" width="46" height="30" rx="4" fill="#6cc4f5"/>
+    <rect x="126" y="56" width="46" height="30" rx="4" fill="#6cc4f5"/>
+    <rect x="182" y="56" width="42" height="30" rx="4" fill="#14181f"/>
+    <rect x="182" y="56" width="42" height="30" rx="4" fill="#f5b400" fill-opacity="0.9"/>
+    <text x="203" y="77" text-anchor="middle" font-size="14" font-weight="700" fill="#14181f">101</text>
+    <circle cx="42" cy="104" r="20" fill="#101215"/>
+    <circle cx="42" cy="104" r="8" fill="#555"/>
+    <circle cx="198" cy="104" r="20" fill="#101215"/>
+    <circle cx="198" cy="104" r="8" fill="#555"/>
+    <rect x="-6" y="60" width="10" height="16" rx="2" fill="#ffce6b"/>
+    <rect x="236" y="60" width="10" height="16" rx="2" fill="#e8452c"/>
+  </g>
+</svg>

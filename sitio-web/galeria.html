@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minibús Rush: Rutas Urbanas — Galería</title>
+  <meta name="description" content="Galería de capturas de Minibús Rush: Rutas Urbanas." />
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img class="logo-icon" src="assets/img/logo.svg" alt="" />
+        <span>MINIBÚS RUSH<small>Rutas Urbanas</small></span>
+      </a>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="historia.html">Historia</a></li>
+          <li><a href="jugabilidad.html">Jugabilidad</a></li>
+          <li><a href="mundo.html">Mundo y vehículo</a></li>
+          <li><a href="galeria.html" aria-current="page">Galería</a></li>
+          <li><a href="equipo.html">Equipo</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero skyline-bg" style="padding-bottom: 40px;">
+      <div class="container">
+        <p class="eyebrow">Vista previa</p>
+        <h1 style="font-size: clamp(2rem, 4.4vw, 2.9rem);">Galería<span>del prototipo</span></h1>
+        <p class="lead">
+          Mockups del HUD y la escena en juego, con la misma paleta de colores del prototipo real.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+
+        <div class="grid grid-2">
+
+          <figure class="gallery-frame">
+            <div class="shot">
+              <div class="mock-shot">
+                <div class="mock-panel top-left">💰 15 Bs<br/>⛽ 100%<br/>⭐ 50/100<br/>👥 3/8 pasajeros</div>
+                <div class="mock-panel top-right">PRÓXIMA PARADA<br/>MERCADO CENTRAL<br/><div class="mock-minimap"></div></div>
+                <div class="mock-road"></div>
+                <div class="mock-bus"></div>
+              </div>
+            </div>
+            <figcaption><strong>Conducción con HUD activo</strong>Contadores de dinero, combustible, reputación y pasajeros en tiempo real.</figcaption>
+          </figure>
+
+          <figure class="gallery-frame">
+            <div class="shot">
+              <div class="mock-shot">
+                <div class="mock-prompt">🚏 Detente aquí — 3 pasajeros esperando</div>
+                <div class="mock-panel top-left">💰 21 Bs<br/>⛽ 82%<br/>⭐ 54/100</div>
+                <div class="mock-road"></div>
+                <div class="mock-bus"></div>
+              </div>
+            </div>
+            <figcaption><strong>Llegada a una parada</strong>El aviso "Detente aquí" aparece al acercarse a pasajeros esperando.</figcaption>
+          </figure>
+
+          <figure class="gallery-frame">
+            <div class="shot">
+              <div class="mock-shot">
+                <div class="mock-panel top-left">⛽ 8%<br/><span style="color:var(--color-red)">¡combustible bajo!</span></div>
+                <div class="mock-prompt" style="border-color: rgba(43,111,179,0.5); color:#6cc4f5;">⛽ Repostar — presiona F — 20 Bs</div>
+                <div class="mock-road"></div>
+                <div class="mock-bus"></div>
+              </div>
+            </div>
+            <figcaption><strong>Parada en la gasolinera</strong>Repostar cerca y detenido, pagando según lo que falte para llenar el tanque.</figcaption>
+          </figure>
+
+          <figure class="gallery-frame">
+            <div class="shot">
+              <div class="mock-shot">
+                <div class="mock-panel top-left" style="text-align:center; left:50%; transform:translateX(-50%); top:38%; color: var(--color-yellow); font-size:0.9rem;">RUTA COMPLETADA<br/><span style="color:#6ee08a; font-size:0.7rem;">+25 Bs</span></div>
+                <div class="mock-road"></div>
+                <div class="mock-bus"></div>
+              </div>
+            </div>
+            <figcaption><strong>Ruta completada</strong>Al llegar a la última parada se muestra la recompensa y la ruta se reinicia sola.</figcaption>
+          </figure>
+
+        </div>
+
+        <div class="gallery-note">
+          📸 <strong>Nota para la exposición:</strong> estos paneles son mockups hechos en HTML/CSS con la
+          misma paleta del HUD real, mientras se reemplazan por capturas de pantalla del prototipo corriendo
+          (<code>npm run dev</code>). Sustituir cada <code>&lt;div class="mock-shot"&gt;</code> por una
+          <code>&lt;img&gt;</code> apuntando a <code>assets/img/capturas/</code> antes de la entrega final.
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><strong>Minibús Rush: Rutas Urbanas</strong> — Proyecto académico, Programación Gráfica y Multimedia I</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minibús Rush: Rutas Urbanas</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23c9a227'/%3E%3Crect x='5' y='13' width='22' height='11' rx='2' fill='%232c2f33'/%3E%3Ccircle cx='10' cy='25' r='3' fill='%231a1a1a'/%3E%3Ccircle cx='22' cy='25' r='3' fill='%231a1a1a'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <!-- Contenedor del canvas 3D del juego -->
+    <div id="app">
+      <canvas id="game-canvas"></canvas>
+
+      <!-- HUD superpuesto -->
+      <div id="hud">
+        <div id="hud-top-left" class="hud-panel">
+          <div class="stat-row"><span class="stat-icon">💰</span><span id="money-readout">15 Bs</span></div>
+          <div class="stat-row"><span class="stat-icon">⛽</span><span id="fuel-readout">100%</span></div>
+          <div class="stat-row"><span class="stat-icon">⭐</span><span id="reputation-readout">50/100</span></div>
+          <div class="stat-row"><span class="stat-icon">👥</span><span id="passengers-readout">0/8 pasajeros</span></div>
+          <div class="stat-row stat-row-secondary"><span class="stat-icon">🚌</span><span id="speed-readout">0 km/h</span></div>
+          <div id="wear-warnings"></div>
+          <div id="money-popups"></div>
+        </div>
+
+        <div id="hud-top-right" class="hud-panel">
+          <div id="gps-title">PRÓXIMA PARADA</div>
+          <div id="gps-stop-name">TERMINAL</div>
+          <div id="gps-distance">0 m</div>
+          <canvas id="minimap-canvas" width="160" height="160"></canvas>
+        </div>
+
+        <div id="stop-prompt" class="hud-panel hidden">
+          <div id="stop-prompt-title">🚏 Detente aquí</div>
+          <div id="stop-prompt-detail">3 pasajeros esperando</div>
+        </div>
+
+        <div id="service-prompt" class="hud-panel hidden">
+          <div id="service-prompt-title">⛽ Repostar</div>
+          <div id="service-prompt-detail">Presiona F — 20 Bs</div>
+        </div>
+
+        <div id="service-toast" class="hidden"></div>
+
+        <div id="fuel-empty-banner" class="hidden">
+          <div>🚫 Te quedaste sin combustible</div>
+          <div id="fuel-empty-detail">Ve a la gasolinera más cercana</div>
+        </div>
+
+        <div id="route-complete-banner" class="hidden">
+          <div id="route-complete-title">RUTA COMPLETADA</div>
+          <div id="route-complete-detail">+25 Bs</div>
+        </div>
+
+        <div id="controls-hint" class="hud-panel">
+          <strong>Controles</strong>
+          <div>W / ↑ — Acelerar</div>
+          <div>S / ↓ — Frenar / Reversa</div>
+          <div>A D / ← → — Girar</div>
+          <div>Espacio — Freno de mano</div>
+          <div>C — Cambiar cámara</div>
+          <div>F — Repostar (gasolinera)</div>
+          <div>G — Reparar (taller)</div>
+        </div>
+      </div>
+
+      <div id="loading-screen">
+        <div id="loading-content">
+          <h1>MINIBÚS RUSH</h1>
+          <h2>RUTAS URBANAS</h2>
+          <div id="loading-bar-track">
+            <div id="loading-bar-fill"></div>
+          </div>
+          <p>Cargando ciudad...</p>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

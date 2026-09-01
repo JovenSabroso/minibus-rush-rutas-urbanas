@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minibús Rush: Rutas Urbanas — Jugabilidad</title>
+  <meta name="description" content="Controles, economía y sistemas de juego de Minibús Rush: Rutas Urbanas." />
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img class="logo-icon" src="assets/img/logo.svg" alt="" />
+        <span>MINIBÚS RUSH<small>Rutas Urbanas</small></span>
+      </a>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="historia.html">Historia</a></li>
+          <li><a href="jugabilidad.html" aria-current="page">Jugabilidad</a></li>
+          <li><a href="mundo.html">Mundo y vehículo</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+          <li><a href="equipo.html">Equipo</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero skyline-bg" style="padding-bottom: 40px;">
+      <div class="container">
+        <p class="eyebrow">Sistemas de juego</p>
+        <h1 style="font-size: clamp(2rem, 4.4vw, 2.9rem);">Cómo se juega<span>Minibús Rush</span></h1>
+        <p class="lead">
+          Conducción en tercera persona, economía de pasajeros y un vehículo que
+          hay que cuidar de verdad. Esto es lo que controla el jugador.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Controles</p>
+          <h2>Todo se maneja con el teclado</h2>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Tecla</th><th>Acción</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>W / ↑</td><td>Acelerar</td></tr>
+              <tr><td>S / ↓</td><td>Frenar / Reversa</td></tr>
+              <tr><td>A D / ← →</td><td>Girar</td></tr>
+              <tr><td>Espacio</td><td>Freno de mano</td></tr>
+              <tr><td>C</td><td>Cambiar cámara (detrás / elevada / cercana)</td></tr>
+              <tr><td>F</td><td>Repostar en la gasolinera (cerca y detenido)</td></tr>
+              <tr><td>G</td><td>Reparar en el taller mecánico (cerca y detenido)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">El ciclo de juego</p>
+          <h2>Recoger, cobrar, entregar, repetir</h2>
+          <p>La ruta 101 conecta cuatro paradas fijas de la ciudad en un circuito continuo.</p>
+        </div>
+        <div class="grid grid-2">
+          <div class="card accent-green">
+            <div class="icon">🚏</div>
+            <h3>Ruta y paradas</h3>
+            <p>Terminal → Mercado Central → Centro → Zona Sur. Cada parada tiene poste, letrero y un anillo indicador en el piso. El embarque es automático al detenerte cerca con pasajeros esperando.</p>
+          </div>
+          <div class="card">
+            <div class="icon">💰</div>
+            <h3>Tarifas</h3>
+            <p>Normal (2 Bs), trayecto largo (3 Bs) y especial (5 Bs). El dinero cobrado aparece como un popup flotante junto al contador del HUD.</p>
+          </div>
+          <div class="card accent-blue">
+            <div class="icon">🗺️</div>
+            <h3>GPS y minimapa</h3>
+            <p>Un mini-mapa muestra toda la ruta: gris = pendiente, amarillo pulsante = destino actual, verde = ya visitada, más tu posición y orientación en tiempo real.</p>
+          </div>
+          <div class="card accent-red">
+            <div class="icon">🏁</div>
+            <h3>Ruta completada</h3>
+            <p>Al llegar a la última parada bajan todos los pasajeros a la vez, se muestra "RUTA COMPLETADA" con la recompensa (25 Bs) y la ruta se reinicia sola.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Mantenimiento</p>
+          <h2>El minibús también se cansa</h2>
+        </div>
+        <div class="grid grid-3">
+          <div class="card">
+            <div class="icon">⛽</div>
+            <h3>Combustible</h3>
+            <p>Empieza al 100% y baja al conducir. En 0% el motor se apaga (el bus sigue frenando por inercia). Se repone en la gasolinera pagando según lo que falte.</p>
+          </div>
+          <div class="card accent-red">
+            <div class="icon">🔧</div>
+            <h3>Desgaste (5 estadísticas)</h3>
+            <p>Motor, frenos, neumáticos, suspensión y carrocería, todas empezando al 60%. Por debajo del 40%/20% se nota en la aceleración, el frenado y el giro. Los choques dañan suspensión y carrocería.</p>
+          </div>
+          <div class="card accent-green">
+            <div class="icon">⭐</div>
+            <h3>Reputación</h3>
+            <p>De 0 a 100, con niveles desde "Mal conductor" hasta "Conductor destacado". Sube transportando pasajeros y completando rutas; baja al chocar, y se recupera de a poco conduciendo bien.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta-banner">
+          <h2>¿Y la ciudad en la que conduces?</h2>
+          <p>Conoce cómo está construida la ciudad procedural y el minibús del jugador.</p>
+          <a class="btn btn-primary" href="mundo.html">Ver mundo y vehículo →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><strong>Minibús Rush: Rutas Urbanas</strong> — Proyecto académico, Programación Gráfica y Multimedia I</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minibús Rush: Rutas Urbanas — Mundo y vehículo</title>
+  <meta name="description" content="La ciudad procedural y el minibús de Minibús Rush: Rutas Urbanas." />
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img class="logo-icon" src="assets/img/logo.svg" alt="" />
+        <span>MINIBÚS RUSH<small>Rutas Urbanas</small></span>
+      </a>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="historia.html">Historia</a></li>
+          <li><a href="jugabilidad.html">Jugabilidad</a></li>
+          <li><a href="mundo.html" aria-current="page">Mundo y vehículo</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+          <li><a href="equipo.html">Equipo</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero skyline-bg" style="padding-bottom: 40px;">
+      <div class="container">
+        <p class="eyebrow">Arte y diseño técnico</p>
+        <h1 style="font-size: clamp(2rem, 4.4vw, 2.9rem);">Todo generado<span>por código</span></h1>
+        <p class="lead">
+          Ni la ciudad ni el minibús usan modelos 3D externos: geometría y texturas
+          procedurales construidas con Three.js y Canvas2D.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">La ciudad</p>
+          <h2>Inspirada en La Paz y El Alto</h2>
+          <p>Un homenaje visual al transporte urbano boliviano, sin representar lugares o marcas reales.</p>
+        </div>
+        <div class="grid grid-2">
+          <div class="card">
+            <div class="icon">🏗️</div>
+            <h3>Grilla urbana</h3>
+            <p>Manzanas, edificios coloridos, aceras, avenidas marcadas y faroles distribuidos en una grilla procedural.</p>
+          </div>
+          <div class="card accent-red">
+            <div class="icon">🧱</div>
+            <h3>Fachadas "a medio construir"</h3>
+            <p>Los edificios más altos combinan una planta baja pintada de color vivo con pisos superiores en ladrillo/concreto crudo y varillas de fierro asomando del techo: el aspecto típico de autoconstrucción por etapas de El Alto.</p>
+          </div>
+          <div class="card accent-blue">
+            <div class="icon">🚡</div>
+            <h3>Teleférico decorativo</h3>
+            <p>Un teleférico animado cruza la ciudad de fondo, junto a montañas que enmarcan el horizonte.</p>
+          </div>
+          <div class="card accent-green">
+            <div class="icon">🚦</div>
+            <h3>Elementos de la ruta</h3>
+            <p>Cada parada de bus tiene poste, letrero y un anillo indicador en el piso; gasolinera con canopy y surtidores, y un taller mecánico con su propio cartel.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">El vehículo</p>
+          <h2>El minibús 101</h2>
+          <p>Construido pieza por pieza con geometría procedural, con un aspecto deliberadamente desgastado.</p>
+        </div>
+        <div class="grid grid-2">
+          <div class="card">
+            <div class="icon">🚌</div>
+            <h3>Carrocería</h3>
+            <p>Techo, ventanas, puertas, parachoques, luces y espejos modelados por código, con ruedas que giran y ruedan visualmente al conducir.</p>
+          </div>
+          <div class="card accent-red">
+            <div class="icon">🎨</div>
+            <h3>Texturas por Canvas2D</h3>
+            <p>Sin imágenes externas: pintura con variaciones sutiles de tono, costuras de chapa, una franja de acento y mugre/óxido cerca de las ruedas, todo generado por código.</p>
+          </div>
+          <div class="card accent-blue">
+            <div class="icon">💡</div>
+            <h3>Frente y parte trasera</h3>
+            <p>Rejilla frontal ancha con faros grandes en las esquinas y marcadores ámbar; letrero de destino con el número de ruta "101". Atrás: luces más verticales, tercera luz de freno y ventana trasera.</p>
+          </div>
+          <div class="card accent-green">
+            <div class="icon">🛞</div>
+            <h3>Proporciones</h3>
+            <p>Arcos y salpicaderas oscuros sobre cada rueda para que no queden "pegadas" a un costado liso, ajustados mirando referencias reales de vans solo como inspiración visual.</p>
+          </div>
+        </div>
+
+        <div class="hero-art" style="margin-top: 40px;">
+          <div class="gallery-frame">
+            <img src="assets/img/hero-ciudad.svg" alt="El minibús 101 recorriendo la ciudad procedural, con montañas y teleférico de fondo" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Bajo el capó (técnico)</p>
+          <h2>Stack de desarrollo</h2>
+        </div>
+        <div class="badge-row" style="justify-content: center;">
+          <span class="badge">HTML5</span>
+          <span class="badge">CSS3</span>
+          <span class="badge">JavaScript (módulos ES6)</span>
+          <span class="badge">Three.js</span>
+          <span class="badge">Vite</span>
+          <span class="badge">Geometría 100% procedural</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta-banner">
+          <h2>¿Ya viste capturas del juego?</h2>
+          <p>Pasa por la galería para ver el HUD, el minimapa y la ciudad en acción.</p>
+          <a class="btn btn-primary" href="galeria.html">Ver galería →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><strong>Minibús Rush: Rutas Urbanas</strong> — Proyecto académico, Programación Gráfica y Multimedia I</p>
+    </div>
+  </footer>
+
+</body>
+</html>
