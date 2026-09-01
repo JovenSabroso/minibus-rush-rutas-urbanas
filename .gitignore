@@ -2,6 +2,3 @@ node_modules/
 dist/
 .DS_Store
 *.log
-
-# Asset de stock de terceros (no se usa en el codigo; el juego es 100% geometria procedural)
-vecteezy_brown-van-template_33296263_715.zip
